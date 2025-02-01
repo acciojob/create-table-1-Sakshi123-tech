@@ -13,4 +13,4 @@ function insert_Row() {
     // Insert newRow at the beginning of the table
     table.insertBefore(newRow, table.firstChild);
 }
-document.querySelector('input[type="button"]').addEventListener('click', insert_Row);
+table.addEventListener('click', insert_Row);
