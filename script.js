@@ -1,19 +1,15 @@
-let table = document.querySelector('#sampleTable');
-let button = document.querySelector('input[type="button"]'); // Add this line
-
 function insert_Row() {
-  let newRow = document.createElement('tr');
-  let cell1 = document.createElement('td');
-  cell1.textContent = 'New Cell1';  // Ensure there's no space
+    // Get the table element using its ID
+    var table = document.getElementById("sampleTable");
 
-  let cell2 = document.createElement('td');
-  cell2.textContent = 'New Cell2';  // Ensure there's no space
+    // Create a new row element
+    var newRow = table.insertRow(0); // Insert at the top of the table (index 0)
 
-  newRow.appendChild(cell1);
-  newRow.appendChild(cell2);
+    // Create new cells for the row
+    var cell1 = newRow.insertCell(0);
+    var cell2 = newRow.insertCell(1);
 
-  table.insertBefore(newRow, table.firstChild);
+    // Set the text content for the cells
+    cell1.innerHTML = "New Cell1";
+    cell2.innerHTML = "New Cell2";
 }
-
-// Change event listener from the table to the button
-button.addEventListener('click', insert_Row);
