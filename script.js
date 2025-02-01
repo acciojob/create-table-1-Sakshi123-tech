@@ -1,5 +1,4 @@
 let table = document.querySelector('#sampleTable')
-
 function insert_Row() {
     let newRow = document.createElement('tr');
     let cell1 = document.createElement('td');
@@ -10,7 +9,8 @@ function insert_Row() {
 
     newRow.appendChild(cell1);  // Append cell1 to newRow
     newRow.appendChild(cell2);  // Append cell2 to newRow
-    table.appendChild(newRow);  // Append newRow to table
-}
 
+    // Insert newRow at the beginning of the table
+    table.insertBefore(newRow, table.firstChild);
+}
 table.addEventListener('click', insert_Row);
